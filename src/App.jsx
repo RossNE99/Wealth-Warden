@@ -6,19 +6,16 @@ import Date from './components/Date/Index'
 function App() {
   
 
-  // return (
-  //   <div>
-  //     {/* <NabBar/> */}
-  //    <Budgeting/>
-  //    <Home/>
-  //   </div>
-    
-  // )
   return (
-    <div className="App">
-      <Date />
+    <div>
+      {/* <NabBar/> */}
+     <Budgeting/>
+     <Home/>
+     <Date/>
     </div>
+    
   );
+
 }
 
 export default App
