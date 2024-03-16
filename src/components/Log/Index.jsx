@@ -8,12 +8,19 @@ const moc = [
 {name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
 {name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
 {name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
+{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245},
 ]
 
 function Log({size}) {
   return (
-    <div className={`overflow-x-auto shadow-lg rounded-lg mt-5 ${size}`}>
-     <h2 className='text-2xl font-semibold'>Logs</h2>
+    <>
+    <h2 className='text-2xl font-semibold m-3'>Logs</h2>
+    <div className={`overflow-x-auto ${size}`}>
     <Table>
       <Table.Head>
         <Table.HeadCell>Pot Name</Table.HeadCell>
@@ -25,7 +32,7 @@ function Log({size}) {
       </Table.Head>
       <Table.Body className="divide-y">
         {moc.map((transaction) => (
-            <>
+            <React.Fragment key={transaction.name}>
             <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
             {transaction.name}
@@ -38,11 +45,12 @@ function Log({size}) {
                 </a>
             </Table.Cell> */}
             </Table.Row>
-            </>
+            </React.Fragment>
         ))}
       </Table.Body>
     </Table>
   </div>
+  </>
   )
 }
 
