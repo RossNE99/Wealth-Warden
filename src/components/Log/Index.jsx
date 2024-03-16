@@ -2,12 +2,12 @@ import React from 'react'
 import { Table } from 'flowbite-react';
 
 const moc = [
-{name:"Test1", type:"Saving", ammount:2.21}, 
-{name:"Test2", type:"Spendibg", ammount:7.22}, 
-{name:"Test2", type:"Spendibg", ammount:7.22}, 
-{name:"Test1", type:"Saving", ammount:2.21}, 
-{name:"Test1", type:"Saving", ammount:2.21}, 
-{name:"Test2", type:"Spendibg", ammount:7.22}, 
+{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
+{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
 ]
 
 function Log({size}) {
