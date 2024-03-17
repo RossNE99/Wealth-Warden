@@ -8,12 +8,11 @@ import Statement from "./pages/Statement";
 
 function App() {
   return (
-    <div>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/Home" element={<Home />} />
-
+    <div className=''>
+      <Navbar>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/Home" element={<Home />} />
         <Route path="/Budgeting" element={<Budgeting />} />
         <Route path="/Statement" element={<Statement />} />
       </Routes>
@@ -21,6 +20,7 @@ function App() {
      <Budgeting/>
      <Home/>
      <Date/>
+    </Navbar>
     </div>
     
   );
