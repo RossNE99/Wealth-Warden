@@ -6,6 +6,7 @@ import { FaHome } from "react-icons/fa";
 import { RiBillFill } from "react-icons/ri";
 import { AiOutlineAreaChart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
+import { Button } from 'flowbite-react';
 
 
 function Navbar({children}) {
@@ -16,7 +17,7 @@ function Navbar({children}) {
 
   return (
     <>
-     {broken && <button className="bg-blue-500 hover:bg-blue-700 text-white font-bold m-3 py-2 px-4 rounded" onClick={() => setToggled(!toggled)}><GiHamburgerMenu /></button>}
+     {broken && <Button gradientDuoTone="purpleToBlue" className=" text-white font-bold m-3 p-2 rounded" onClick={() => setToggled(!toggled)}><GiHamburgerMenu /></Button>}
     <div className='flex' style={{ height, minHeight: '400px' }}>
     <Sidebar 
     toggled={toggled} 

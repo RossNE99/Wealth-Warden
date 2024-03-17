@@ -19,13 +19,13 @@ const moc = [
 function Log({size}) {
   return (
     <>
-    <h2 className='text-2xl font-semibold m-3'>Logs</h2>
+    <h2 className='text-2xl font-semibold mx-3 mb-3'>Logs</h2>
     <div className={`overflow-x-auto ${size}`}>
     <Table>
       <Table.Head>
-        <Table.HeadCell>Pot Name</Table.HeadCell>
-        <Table.HeadCell>Type</Table.HeadCell>
-        <Table.HeadCell>Ammoint</Table.HeadCell>
+        <Table.HeadCell className='bg-gray-300'>Pot Name</Table.HeadCell>
+        <Table.HeadCell className='bg-gray-300'>Type</Table.HeadCell>
+        <Table.HeadCell className='bg-gray-300'>Ammoint</Table.HeadCell>
         {/* <Table.HeadCell>
           <span className="sr-only">Edit</span>
         </Table.HeadCell> */}
@@ -33,7 +33,7 @@ function Log({size}) {
       <Table.Body className="divide-y">
         {moc.map((transaction) => (
             <React.Fragment key={transaction.name}>
-            <Table.Row className="bg-white dark:border-gray-700 dark:bg-gray-800">
+            <Table.Row className="bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
             {transaction.name}
             </Table.Cell>

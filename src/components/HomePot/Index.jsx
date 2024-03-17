@@ -1,3 +1,4 @@
+import { Button } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
 import ReactApexChart from 'react-apexcharts';
 import { FaPlus } from "react-icons/fa";
@@ -69,14 +70,14 @@ function HomePot({name, ammountInInPot, totalAllocated, type}) {
     },[name, ammountInInPot, totalAllocated])
   
     return (
-    <div style={{minWidth:"45%", maxWidth:"46%", backgroundColor:"#F0F0F0"}} className="rounded-lg m-1 relative">
-    <button className='m-3 absolute top-0 right-0 size-6 rounded-lg bg-blue-500 flex justify-center items-center'>
+    <div style={{minWidth:"45%", maxWidth:"46%"}} className="rounded-lg m-1 relative bg-gray-100 shadow">
+    <Button gradientDuoTone="purpleToBlue" className='m-3 absolute top-0 right-0 size-6 rounded-lg flex justify-center items-center shadow-lg'>
      {
      type==="save" ? 
      <FaPlus className='' /> : 
      type==="spend" ? <FaMinus className='' />
      : null}
-     </button>
+     </Button>
      <ReactApexChart options={potChartData.options} series={potChartData.series} type="donut" />
     </div>
   )

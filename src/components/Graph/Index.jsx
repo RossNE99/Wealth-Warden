@@ -61,7 +61,7 @@ function Graph() {
         },
       }) 
   return (
-    <div className='mt-2' id="chart">
+    <div className='mt-2 bg-gray-100 rounded-lg shadow-lg p-1' id="chart">
         <h2 className='text-2xl font-semibold m-3' style={{marginBottom:-13}}>Graph</h2>
             <ReactApexChart options={chartData.options} series={chartData.series} type="area"/>
     </div>
