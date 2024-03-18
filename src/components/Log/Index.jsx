@@ -2,18 +2,18 @@ import React from 'react'
 import { Table } from 'flowbite-react';
 
 const moc = [
-{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
-{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
-{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", ammount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spendibg", ammount:7.22, timeStamp: 123453245},
+{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
+{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
+{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
+{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
+{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245},
 ]
 
 function Log({size}) {
@@ -25,7 +25,7 @@ function Log({size}) {
       <Table.Head>
         <Table.HeadCell className='bg-gray-300'>Pot Name</Table.HeadCell>
         <Table.HeadCell className='bg-gray-300'>Type</Table.HeadCell>
-        <Table.HeadCell className='bg-gray-300'>Ammoint</Table.HeadCell>
+        <Table.HeadCell className='bg-gray-300'>Amount</Table.HeadCell>
         {/* <Table.HeadCell>
           <span className="sr-only">Edit</span>
         </Table.HeadCell> */}
@@ -38,7 +38,7 @@ function Log({size}) {
             {transaction.name}
             </Table.Cell>
             <Table.Cell>{transaction.type}</Table.Cell>
-            <Table.Cell>{transaction.ammount}</Table.Cell>
+            <Table.Cell>{transaction.amount}</Table.Cell>
             {/* <Table.Cell>
                 <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                 Edit
