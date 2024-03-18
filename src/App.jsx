@@ -14,8 +14,6 @@ function App() {
  
     <div>
       <AddPotButton />
-    
-   
     <Budgeting/>
     <Home/>
     </div>

@@ -11,23 +11,18 @@ export default function AddPotButton() {
   return (
     <>
       <Button
-        className="rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        className="rounded shadow hover:shadow-lg outline-none mr-1 mb-1 "
         onClick={() => setShowAddWithdrawModal(true)}>
-       
         Add/Withdraw from Pot
-
       </Button>
 
       <Button
-        className="rounded shadow hover:shadow-lg outline-none focus:outline-none mr-1 mb-1 ease-linear transition-all duration-150"
+        className="rounded shadow hover:shadow-lg outline-none  mr-1 mb-1 "
         onClick={() => setShowAddPotModal(true)}>
-       
         Add Pot
-
       </Button>
 
-      <Modal  show={showAddWithdrawModal} size="md" popup  onClose={() => setShowAddWithdrawModal(false)}
-      >
+      <Modal  show={showAddWithdrawModal} size="md" popup  onClose={() => setShowAddWithdrawModal(false)}>
         <Modal.Header />
         <Modal.Body>
           <AddWithdrawModal />
@@ -40,20 +35,6 @@ export default function AddPotButton() {
             <BudgetPotModal />
             </Modal.Body>
       </Modal>
-
-     {/*  {showAddPotModal ? (
-        <>
-          <BudgetPotModal />
-        </>
-      ) : null} */}
-
-      {/* {showAddWithdrawModal ? (
-        <>
-          <AddWithdrawModal />
-        </>
-      ) : null} */}
-
-     
     </>
   );
 }

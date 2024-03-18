@@ -2,6 +2,8 @@ import { Button, Label , Modal, TextInput} from "flowbite-react";
 import { useRef, useState } from "react";
 import React from "react";
 
+/* To add or withdraw money from the savings or spending pot*/
+
 function AddWithdrawModal(props) {
 
     const[inputAmount, setInputmount] = useState(0);
