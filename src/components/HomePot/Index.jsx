@@ -1,10 +1,14 @@
-import { Button } from 'flowbite-react';
+import { Button, Modal } from 'flowbite-react';
 import React, { useEffect, useState } from 'react'
 import ReactApexChart from 'react-apexcharts';
 import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
+import AddWithdrawModal from '../AddAndWithdrawModal/Index';
 
 function HomePot({name, ammountInInPot, totalAllocated, type}) {
+
+    const [showAddWithdrawModal, setShowAddWithdrawModal] = useState(false);
+
     const AmmountLeftToSave = totalAllocated-ammountInInPot
     const [potChartData, setPotChartData] = useState({ //this inital state is needed to trigger a rerender when the actual data is loaded
       series: [ammountInInPot, AmmountLeftToSave],     //this is to fix a apex chart bug where sometimes the intial render of the chart will be the wrong size
@@ -70,7 +74,8 @@ function HomePot({name, ammountInInPot, totalAllocated, type}) {
     },[name, ammountInInPot, totalAllocated])
   
     return (
-    <div style={{minWidth:"45%", maxWidth:"46%"}} className="rounded-lg m-1 relative bg-gray-100 shadow">
+    <>
+    <div  onClick={() => setShowAddWithdrawModal(true)} style={{minWidth:"45%", maxWidth:"46%"}} className="rounded-lg m-1 relative bg-gray-100 shadow">
     <Button gradientDuoTone="purpleToBlue" className='m-3 absolute top-0 right-0 size-6 rounded-lg flex justify-center items-center shadow-lg'>
      {
      type==="save" ? 
@@ -80,6 +85,13 @@ function HomePot({name, ammountInInPot, totalAllocated, type}) {
      </Button>
      <ReactApexChart options={potChartData.options} series={potChartData.series} type="donut" />
     </div>
+    <Modal  show={showAddWithdrawModal} size="md" popup  onClose={() => setShowAddWithdrawModal(false)}>
+        <Modal.Header />
+        <Modal.Body>
+        <AddWithdrawModal name={name} ammountInInPot={ammountInInPot} totalAllocated={totalAllocated} type={type} setShowAddWithdrawModal={setShowAddWithdrawModal} />
+        </Modal.Body>
+      </Modal>
+    </>
   )
 }
 
