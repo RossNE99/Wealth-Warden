@@ -1,10 +1,15 @@
-import React from 'react'
-import AddPotButton from '../components/AddPotBtn/Index'
+import React from 'react';
+import MonthlyWage from '../components/MonthlyWage/Index';
+import BudgetSavingPot from '../components/BudgetSavingPot/Index';
+import BudgetSpendingPot from '../components/BudgetSpendingPot/Index';
 
 function Budgeting() {
   return (
-    <div>Budgeting components go here
-        <AddPotButton />
+
+    <div className='grid md:grid-cols-3 sm:grid-cols-1 gap-1 container mx-auto'>
+      <MonthlyWage/>
+      <BudgetSavingPot/>
+      <BudgetSpendingPot/>
     </div>
   )
 }
