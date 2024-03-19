@@ -39,6 +39,7 @@ function Navbar({children}) {
           },
         }}
       >
+        <h2 className='text-3xl font-bold m-3 mb-5 bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-500'>Wealth-Warden</h2>
         <MenuItem component={<Link to="/Home" />} icon={<FaHome />}> Home</MenuItem>
         <MenuItem component={<Link to="/Budgeting" />} icon={<AiOutlineAreaChart/>}> Budgeting</MenuItem>
         <MenuItem component={<Link to="/Statement" />} icon={<RiBillFill />}> Statement</MenuItem>
