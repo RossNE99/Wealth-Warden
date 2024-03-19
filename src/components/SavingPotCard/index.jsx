@@ -45,7 +45,7 @@ function SavingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
   };
 
   return (
-    <div className="w-full md:w-1/2 lg:w-1/5 p-4">
+    <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-full" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
         <div className="px-6 py-4">

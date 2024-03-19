@@ -1,7 +1,8 @@
-import React from 'react'
-import HomePotsContainer from '../components/HomePotsContainer/Index'
-import Log from '../components/Log/Index'
-import Graph from '../components/Graph/Index'
+import React from 'react';
+import HomePotsContainer from '../components/HomePotsContainer/Index';
+import Log from '../components/Log/Index';
+import Graph from '../components/Graph/Index';
+import Row from '../components/Row';
 
 function Home() {
   return (

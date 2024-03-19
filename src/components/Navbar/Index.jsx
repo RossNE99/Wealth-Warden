@@ -7,6 +7,7 @@ import { RiBillFill } from "react-icons/ri";
 import { AiOutlineAreaChart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Button } from 'flowbite-react';
+import Date from '../Date';
 
 
 function Navbar({children}) {
@@ -42,6 +43,7 @@ function Navbar({children}) {
         <MenuItem component={<Link to="/Budgeting" />} icon={<AiOutlineAreaChart/>}> Budgeting</MenuItem>
         <MenuItem component={<Link to="/Statement" />} icon={<RiBillFill />}> Statement</MenuItem>
       </Menu>
+      <Date/>
     </Sidebar>
     {children}
     </div>
