@@ -1,8 +1,11 @@
 import React from 'react'
+import AddPotButton from '../components/AddPotBtn/Index'
 
 function Budgeting() {
   return (
-    <div>Budgeting components go here</div>
+    <div>Budgeting components go here
+        <AddPotButton />
+    </div>
   )
 }
 
