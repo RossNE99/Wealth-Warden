@@ -44,7 +44,6 @@ function Navbar({ children }) {
             <div className="navbar-logo">
               <img src={Logo} alt="Logo" style={{ width: '100', height: 'auto' }} />
             </div>
-            {/* <img src={logo} alt="logo" /> */}
             <MenuItem component={<Link to="/Home" />} icon={<FaHome />}> Home</MenuItem>
             <MenuItem component={<Link to="/Budgeting" />} icon={<AiOutlineAreaChart />}> Budgeting</MenuItem>
             <MenuItem component={<Link to="/Statement" />} icon={<RiBillFill />}> Statement</MenuItem>
