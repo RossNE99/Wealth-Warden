@@ -11,7 +11,6 @@ function Budgeting() {
       <BudgetSavingPot/>
       <BudgetSpendingPot/>
     </div>
-
   )
 }
 
