@@ -8,7 +8,7 @@ function BudgetPotModal() {
     <>
         <div className="space-y-6">
             <h1 className="text-2xl font-semibold text-center text-gray-700  uppercase ">
-            Add Pot
+            Set Goal
             </h1>
             <hr className="h-px my-8 bg-gray-200"/>
         </div>

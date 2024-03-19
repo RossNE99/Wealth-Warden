@@ -48,8 +48,31 @@ function SavingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
     <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-full" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
+      
+        {/* Open the modal to set the goal for the saving pot */}
+        <button
+          className="btn bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 ml-3"
+          onClick={() => document.getElementById(`Pot_${pot.id}`).showModal()}
+        >
+          Set Goal
+        </button>
+
+        <dialog id={`Pot_${pot.id}`} className="modal">
+          <div className="modal-box bg-white rounded-md shadow-md p-6">
+            <h3 className="font-bold text-lg mb-4">Set Pot Goal</h3>
+            <p className="text-gray-700 py-4">Goal goes here</p>
+            <div className="modal-action flex justify-end">
+              <form method="dialog">
+                <button className="btn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Close</button>
+              </form>
+            </div>
+          </div>
+        </dialog>
+
+
+
         <div className="px-6 py-4">
-          <div className="flex items-center justify-center bg-gray-200 rounded-full py-3 px-6 mb-2">
+          <div className="flex items-center justify-center bg-gray-200 rounded-full py-3 px-6 mb-2">         
             <input
               type="text"
               value={name}
@@ -90,3 +113,22 @@ function SavingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
 }
 
 export default SavingPotCard;
+
+
+
+
+
+
+
+
+//Local storage:
+
+
+// SavingPot  ==> {id:"2",name: "test2", ammountInInPot: 0, totalAllocated: 10, type:"save"},  default ammountInInPot to be 0
+// SpendingPot  ==> {id:"13",name: "food", ammountInInPot: 0, totalAllocated: 100, type:"spend"},
+// Log  ==> {},
+
+
+
+
+
