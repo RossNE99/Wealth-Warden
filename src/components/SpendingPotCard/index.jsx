@@ -1,15 +1,35 @@
 import React, { useState } from "react";
+import { useMyContext  } from "../Contexts/MyContext";
 
-function SpendingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
-  const [name, setName] = useState(pot.name || `Spending Pot ${pot.id}`);
+function SpendingPotCard({ pot, onRemove, onUpdateName }) {
+  const [name, setName] = useState(pot.name || `Spending Pot`);
+  const [amount, setAmount] = useState(pot.amount || "");
+  const { updateSpendingPot, SpendingPots } = useMyContext();
 
   const handleNameChange = (e) => {
-    setName(e.target.value);
+    const newName = e.target.value;
+    setName(newName);
+    onUpdateName(pot.id, newName); // Update the name with goal
   };
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    onUpdateName(pot.id, name);
+
+    // Construct saving pot object
+    const newAmount = amount;
+
+    // Construct the new name with amount
+    const newName = `${name}: £${amount}`;
+    setName(newName);
+
+    // Clear the input field after submission
+    setAmount("");
+
+    // Construct saving pot object
+    const newSpendingPot = { id: pot.id, potName: name, totalAllocated: newAmount, ammountInInPot: 0 , type: "spend" };
+
+    //Set into context
+    updateSpendingPot([newSpendingPot, ...SpendingPots]);
   };
 
   return (
@@ -33,8 +53,8 @@ function SpendingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
                 type="number"
                 className="form-input w-full md:w-3/5 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
                 placeholder="£..."
-                value={pot.amount}
-                onChange={(e) => onChangeAmount(pot.id, e.target.value)}
+                value={amount}
+                onChange={(e) => setAmount(e.target.value)}
               />
               <button
                 type="submit"

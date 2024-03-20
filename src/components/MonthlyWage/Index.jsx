@@ -1,16 +1,19 @@
 import React, { useState } from "react";
+import { useMyContext  } from "../Contexts/MyContext";
+
 
 function EnterWage() {
-  const [MonthlyWage, setMonthlyWage] = useState({ amount: '' });
-  const [addedAmount, setAddedAmount] = useState(null);
+  const [MonthlyWageInput, setMonthlyWageInput] = useState({ amount: '' });
+  const { updateMonthlyWage, MonthlyWage } = useMyContext();
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    const amount = MonthlyWage.amount;
+    const amount = MonthlyWageInput.amount;
     console.log(`Monthly wage is £${amount}`);
-    setAddedAmount(amount);
-    // Optionally, you can clear the input field after submission
-    setMonthlyWage({ amount: '' });
+    updateMonthlyWage(amount);
+    // Clear the input field after submission
+    setMonthlyWageInput({ amount: '' });
+
   };
 
   return (
@@ -18,16 +21,16 @@ function EnterWage() {
       <label htmlFor="wage" className="block text-xl font-semibold mb-4">
         Enter this month's wage:
       </label>
-      <img className="w-full mt-4" src="https://cdn-icons-png.flaticon.com/512/10695/10695051.png" alt="Wage" />
+      <img className="w-2/3 mt-4" src="https://cdn-icons-png.flaticon.com/512/10695/10695051.png" alt="Wage" />
       <div className="flex items-center">
         <input
           name="wage"
           type="number"
-          className="form-input w-full md:w-3/4 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
+          className="form-input w-full md:w-1/2 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
           placeholder="£..."
           id="wage"
-          value={MonthlyWage.amount}
-          onChange={(e) => setMonthlyWage({ amount: e.target.value })}
+          value={MonthlyWageInput.amount}
+          onChange={(e) => setMonthlyWageInput({ amount: e.target.value })}
         />
         <button
           type="submit"
@@ -39,7 +42,7 @@ function EnterWage() {
       </div>
       
       <div className="w-full md:w-3/5 mt-2 text-green-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-        Amount Left: £{addedAmount}/£{addedAmount}
+        Monthly Wage: £{MonthlyWage}
       </div>
 
       

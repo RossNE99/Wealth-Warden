@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 import SpendingPotCard from "../SpendingPotCard";
+import { v4 as uuidv4 } from 'uuid';
 
 function BudgetSpendingPot() {
   const [spendingPots, setSpendingPots] = useState([]);
 
   const handleAddSavingPot = () => {
-    const newPotId = spendingPots.length + 1;
     const newPot = {
-      id: newPotId,
+      id: uuidv4(),
       amount: ''
     };
     setSpendingPots([...spendingPots, newPot]);
