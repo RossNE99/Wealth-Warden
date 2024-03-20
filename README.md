@@ -2,8 +2,8 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Wealth-Warden is a client-side single-page application designed to help track spendings and keep your spending habits in check.
-This application acts as your financial ally, guiding you through the mystical realm of budgeting. It functions by asking for your monthly wages as you start using the app
+Wealth-Warden is a client-side single-page application designed to help track and keep your spending habits in check.
+This application acts as your financial ally, guiding you through the mystical realm of budgeting. It functions by asking for your monthly wages as you start using the app. It categories your spendings by sorting them into self-created 'Pots' which allows you to input every expense. It then shows you how much you've spent and how much you have left. Need to save for something special? You can set savings goals, the app then encourages you to save a portion of your earnings each month. Graph's and Monthly pdf's are also generated to discover patterns and show your spending habits. 
 
 
 ## Table of Contents
@@ -17,7 +17,7 @@ This application acts as your financial ally, guiding you through the mystical r
 
 
 ## Dev Requirements
-Git/GitBash, VS Code, React,Vite and the source code, of course! :hammer_and_spanner:
+Git/GitBash, VS Code, React,Vite,Tailwind css and the source code, of course! :hammer_and_spanner:
 
 
 ## Dev Environment Setup
@@ -54,7 +54,7 @@ To get the development environment running:
 
 ## Webpage Screenshot
 The following image shows the application's functionality:
-![Screenshot](assets/images/Teamify-JS.png)
+![Placeholder](./public/images/Wealth%20Warden.jpg)
 
 
 ## Credits
