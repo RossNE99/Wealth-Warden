@@ -5,6 +5,7 @@ import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Index";
 import Statement from "./pages/Statement";
 import { MyProvider } from './components/Contexts/MyContext';
+import { Footer } from "./components/Footer/Index";
 
 function App() {
   return (
@@ -18,6 +19,7 @@ function App() {
             <Route path="/Statement" element={<Statement />} />
           </Routes>
         </Navbar>
+        <Footer/>
       </div>
     </MyProvider>
   );
