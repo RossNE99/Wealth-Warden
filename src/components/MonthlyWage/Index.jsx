@@ -41,8 +41,8 @@ function EnterWage() {
         </button>
       </div>
       
-      <div className="w-full md:w-3/5 mt-2 text-green-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-        Monthly Wage: £{MonthlyWage}
+      <div className="w-full md:w-3/5 mt-2 text-2xl text-green-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
+        Monthly Wage: <span className="font-bold">£{MonthlyWage}</span>
       </div>
 
       

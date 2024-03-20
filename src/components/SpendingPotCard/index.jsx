@@ -1,15 +1,18 @@
 import React, { useState } from "react";
 import { useMyContext  } from "../Contexts/MyContext";
 
-function SpendingPotCard({ pot, onRemove, onUpdateName }) {
-  const [name, setName] = useState(pot.name || `Spending Pot`);
+function SpendingPotCard({ pot, onRemove }) {
+  const [name, setName] = useState(
+    pot.potName !== undefined && pot.totalAllocated !== undefined
+      ? `${pot.potName}: £${pot.totalAllocated}`
+      : ""
+  );
   const [amount, setAmount] = useState(pot.amount || "");
   const { updateSpendingPot, SpendingPots } = useMyContext();
 
   const handleNameChange = (e) => {
     const newName = e.target.value;
     setName(newName);
-    onUpdateName(pot.id, newName); // Update the name with goal
   };
 
   const handleSubmit = (e) => {
@@ -42,7 +45,7 @@ function SpendingPotCard({ pot, onRemove, onUpdateName }) {
               type="text"
               value={name}
               onChange={handleNameChange}
-              placeholder={`Spending Pot ${pot.id}`}
+              placeholder={`Enter spending pot's name`}
               className="form-input w-full text-xl font-bold text-center bg-transparent focus:outline-none"
             />
           </div>
@@ -52,7 +55,7 @@ function SpendingPotCard({ pot, onRemove, onUpdateName }) {
                 name={`spendingPot-${pot.id}`}
                 type="number"
                 className="form-input w-full md:w-3/5 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
-                placeholder="£..."
+                placeholder="Enter amount here £..."
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />

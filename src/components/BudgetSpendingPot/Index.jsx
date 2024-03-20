@@ -1,14 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SpendingPotCard from "../SpendingPotCard";
 import { v4 as uuidv4 } from 'uuid';
+import { useMyContext } from "../Contexts/MyContext";
 
 function BudgetSpendingPot() {
+  const {SpendingPots} = useMyContext();
   const [spendingPots, setSpendingPots] = useState([]);
 
-  const handleAddSavingPot = () => {
+  //Load spending pots from local storage on initial render
+  useEffect(() => {
+    setSpendingPots(SpendingPots || []);
+  }, [SpendingPots]);
+
+  const handleAddSpendingPot = () => {
+      // If there are existing pots in the local storage, load them first
+      setSpendingPots(SpendingPots)
+      //Then create new pots
     const newPot = {
       id: uuidv4(),
-      amount: ''
+      amount: '',
     };
     setSpendingPots([...spendingPots, newPot]);
   };
@@ -34,7 +44,7 @@ function BudgetSpendingPot() {
         <h2 className='text-2xl font-semibold m-3'>Spending Pots</h2>
         <button
           className="btn bg-red-500 text-white px-4 py-2 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600 mr-3"
-          onClick={handleAddSavingPot}
+          onClick={handleAddSpendingPot}
         >
           Add Pot
         </button>
