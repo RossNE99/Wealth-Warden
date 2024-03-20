@@ -6,7 +6,6 @@ function ResetBtn() {
     //Call in the update functions from context
     const { updateLogs} = useMyContext();
     const { updateMonthlyWage} = useMyContext();
-    const { updateSavingPot} = useMyContext();
     const { updateSpendingPot} = useMyContext();
 
     //Reset all the data from context
@@ -18,9 +17,6 @@ function ResetBtn() {
 
         // Reset the MonthlyWage
         updateMonthlyWage(0);
-
-        // Reset the SavingPots
-        updateSavingPot([]);
 
         // Reset the SpendingPots
         updateSpendingPot([]);

@@ -18,7 +18,7 @@ function EnterWage() {
 
   return (
     <form className="p-4 border border-gray-300 rounded-md shadow-md">
-      <label htmlFor="wage" className="block text-xl font-semibold mb-4">
+      <label htmlFor="wage" className="block text-2xl font-semibold mb-4">
         Enter this month's wage:
       </label>
       <img className="w-2/3 mt-4" src="https://cdn-icons-png.flaticon.com/512/10695/10695051.png" alt="Wage" />

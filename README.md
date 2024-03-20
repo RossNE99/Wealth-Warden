@@ -58,8 +58,8 @@ The following image shows the application's functionality:
 
 
 ## Credits
-- **Ross,Eitel,Dhivya,Temi,Kelly** - Source Code
----
+- **Ross, Eitel, Dhvya, Temi, Kelly** - Source Code
+
 
 
 ## License

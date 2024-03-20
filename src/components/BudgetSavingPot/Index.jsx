@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useMyContext } from "../Contexts/MyContext";
 
 function BudgetSavingPot() {
-  const {SavingPots} = useMyContext();
+  const { updateSavingPot, SavingPots } = useMyContext();
   const [savingPots, setSavingPots] = useState([]);
 
   //Load saving pots from local storage on initial render
@@ -26,6 +26,11 @@ function BudgetSavingPot() {
   const handleRemoveSavingPot = (id) => {
     const updatedPots = savingPots.filter(pot => pot.id !== id);
     setSavingPots(updatedPots);
+
+    //Remove the pot from local storage if present
+    const updatedSavingPots = SavingPots.filter(pot => pot.id !== id);
+    // Update the local storage with the filtered pots
+    updateSavingPot(updatedSavingPots);
   };
 
   const handleChangeAmount = (id, amount) => {
