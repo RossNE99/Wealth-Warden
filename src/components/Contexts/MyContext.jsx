@@ -39,7 +39,7 @@ export const MyProvider = ({ children }) => {
       const totalAmmountInInPots = allPots.reduce((total, pot) => total + pot.ammountInInPot, 0);
 
       setMonthlyWageRemaining(MonthlyWage - totalAmmountInInPots)
-    },[MonthlyWage, SavingPots, SavingPots])
+    },[MonthlyWage, SavingPots, SpendingPots])
 
   return (
     <MyContext.Provider value={{ logs, updateLogs, MonthlyWage, updateMonthlyWage, SavingPots, updateSavingPot, SpendingPots, updateSpendingPot, MonthlyWageRemaining }}>
