@@ -38,7 +38,9 @@ function SpendingPotCard({ pot, onRemove }) {
   return (
     <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src="https://static.vecteezy.com/system/resources/previews/026/988/239/original/single-continuous-line-drawing-winged-wallet-logo-purse-with-wings-icon-losing-money-spending-pay-wasteful-gone-money-financial-concept-dynamic-one-line-draw-graphic-design-illustration-png.png" alt="Spending wallet with wings" />
+        <div className="flex items-center justify-center">
+          <img className="w-3/4" src="https://static.vecteezy.com/system/resources/previews/026/988/239/original/single-continuous-line-drawing-winged-wallet-logo-purse-with-wings-icon-losing-money-spending-pay-wasteful-gone-money-financial-concept-dynamic-one-line-draw-graphic-design-illustration-png.png" alt="Spending wallet with wings" />
+        </div>
         <div className="px-6 py-4">
           <div className="flex items-center justify-center bg-gray-200 rounded-full py-3 px-6 mb-2">
             <input
@@ -50,7 +52,7 @@ function SpendingPotCard({ pot, onRemove }) {
             />
           </div>
           <div className="text-center text-gray-700 text-lg">
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
               <input
                 name={`spendingPot-${pot.id}`}
                 type="number"

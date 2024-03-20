@@ -41,8 +41,9 @@ function SavingPotCard({ pot, onRemove }) {
   return (
     <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
-
+        <div className="flex items-center justify-center">
+          <img className="flex w-1/3 justify-center" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
+        </div>
         <div className="px-6 py-4">
           <div className="flex items-center justify-center bg-gray-200 rounded-full py-3 px-6 mb-2">         
             <input
@@ -54,12 +55,12 @@ function SavingPotCard({ pot, onRemove }) {
             />
           </div>
           <div className="text-center text-gray-700 text-lg">
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
               <input
                 name={`savingPot-${pot.id}`}
                 type="number"
                 className="form-input w-full md:w-3/5 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
-                placeholder="Enter amount here £..."
+                placeholder="Enter amount here£..."
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />
@@ -85,22 +86,3 @@ function SavingPotCard({ pot, onRemove }) {
 }
 
 export default SavingPotCard;
-
-
-
-
-
-
-
-
-//Local storage:
-
-
-// SavingPot  ==> {id:"2",name: "test2", ammountInInPot: 0, totalAllocated: 10, type:"save"},  default ammountInInPot to be 0
-// SpendingPot  ==> {id:"13",name: "food", ammountInInPot: 0, totalAllocated: 100, type:"spend"},
-// Log  ==> {},
-
-
-
-
-

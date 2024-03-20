@@ -7,7 +7,7 @@ import { RiBillFill } from "react-icons/ri";
 import { AiOutlineAreaChart } from "react-icons/ai";
 import { GiHamburgerMenu } from "react-icons/gi";
 import { Button } from 'flowbite-react';
-import Date from '../Date';
+// import Date from '../Date';
 import Logo from '../../assets/Logo.jpg';
 import { useMyContext  } from "../Contexts/MyContext";
 import ResetBtn from '../ResetBtn';
@@ -52,7 +52,7 @@ function Navbar({ children }) {
             <MenuItem component={<Link to="/Budgeting" />} icon={<AiOutlineAreaChart />}> Budgeting</MenuItem>
             <MenuItem component={<Link to="/Statement" />} icon={<RiBillFill />}> Statement</MenuItem>
           </Menu>
-          <Date />
+          {/* <Date /> */}
           <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
             Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
           </h2>
