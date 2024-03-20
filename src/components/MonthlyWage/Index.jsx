@@ -21,8 +21,10 @@ function EnterWage() {
       <label htmlFor="wage" className="block text-2xl font-semibold mb-4">
         Enter this month's wage:
       </label>
-      <img className="w-2/3 mt-4" src="https://cdn-icons-png.flaticon.com/512/10695/10695051.png" alt="Wage" />
-      <div className="flex items-center">
+      <div className="flex items-center justify-center">
+        <img className="w-2/3 mt-4" src="https://cdn-icons-png.flaticon.com/512/10695/10695051.png" alt="Wage" />
+      </div>
+      <div className="flex items-center justify-center">
         <input
           name="wage"
           type="number"
@@ -40,9 +42,10 @@ function EnterWage() {
           Confirm
         </button>
       </div>
-      
-      <div className="w-full md:w-3/5 mt-2 text-2xl text-green-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-        Monthly Wage: <span className="font-bold">£{MonthlyWage}</span>
+      <div className="flex items-center justify-center">
+        <div className="flex items-center justify-center w-full md:w-3/5 mt-2 text-2xl text-green-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
+          Monthly Wage: <span className="font-bold">£{MonthlyWage}</span>
+        </div>
       </div>
 
       

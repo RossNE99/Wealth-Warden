@@ -41,8 +41,9 @@ function SavingPotCard({ pot, onRemove }) {
   return (
     <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
-        <img className="w-full" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
-
+        <div className="flex items-center justify-center">
+          <img className="flex w-2/3 justify-center" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
+        </div>
         <div className="px-6 py-4">
           <div className="flex items-center justify-center bg-gray-200 rounded-full py-3 px-6 mb-2">         
             <input
@@ -54,7 +55,7 @@ function SavingPotCard({ pot, onRemove }) {
             />
           </div>
           <div className="text-center text-gray-700 text-lg">
-            <div className="flex items-center">
+            <div className="flex items-center justify-center">
               <input
                 name={`savingPot-${pot.id}`}
                 type="number"
