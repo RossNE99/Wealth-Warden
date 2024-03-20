@@ -15,7 +15,7 @@ import { useMyContext  } from "../Contexts/MyContext";
 function Navbar({ children }) {
   const [toggled, setToggled] = useState(false);
   const [broken, setBroken] = useState(window.matchMedia('(max-width: 764px)').matches);
-  const {MonthlyWage}= useMyContext();
+  const {MonthlyWage, MonthlyWageRemaining}= useMyContext();
 
   const height = !broken ? `100vh` : "auto"
 
@@ -52,7 +52,7 @@ function Navbar({ children }) {
           </Menu>
           <Date />
           <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-            Remaining allowance: <strong>£{MonthlyWage}</strong>
+            Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
           </h2>
         </Sidebar>
         {children}
