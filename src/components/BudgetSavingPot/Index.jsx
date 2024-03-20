@@ -1,8 +1,10 @@
 import React, { useState } from "react";
 import SavingPotCard from "../SavingPotCard";
 import { v4 as uuidv4 } from 'uuid';
+import { useMyContext } from "../Contexts/MyContext";
 
 function BudgetSavingPot() {
+  // const {SavingPots} = useMyContext();
   const [savingPots, setSavingPots] = useState([]);
 
   const handleAddSavingPot = () => {

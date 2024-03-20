@@ -1,13 +1,16 @@
 import React, { useState } from "react";
+import { useMyContext  } from "../Contexts/MyContext";
 
-function SavingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
-  const [name, setName] = useState(pot.name || `Saving Pot ${pot.id}`);
+function SavingPotCard({ pot, onRemove, onUpdateName }) {
+  const [name, setName] = useState(pot.name || `Saving Pot`);
   const [amount, setAmount] = useState(pot.amount || "");
+  const { updateSavingPot, SavingPots } = useMyContext();
+
 
   const handleNameChange = (e) => {
     const newName = e.target.value;
     setName(newName);
-    onUpdateName(pot.id, newName); // Update the name
+    onUpdateName(pot.id, newName); // Update the name with goal
   };
 
   const handleSubmit = (e) => {
@@ -24,52 +27,17 @@ function SavingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
     setAmount("");
 
     // Construct saving pot object
-    const newSavingPot = { id: pot.id, amount: newAmount };
+    const newSavingPot = { id: pot.id, potName: name, totalAllocated: newAmount, ammountInInPot: 0 , type: "save" };
 
-    // Check if saving goals exist in local storage
-    let savedSavingGoals = JSON.parse(localStorage.getItem("SavedSavingGoals"));
+    //Set into context
+    updateSavingPot([newSavingPot, ...SavingPots]);
 
-    // If saving goals don't exist, create a new array
-    if (!savedSavingGoals) {
-      savedSavingGoals = [];
-    }
-
-    // Append new saving pot object to existing or new saving goals
-    const updatedSavingGoals = [...savedSavingGoals, newSavingPot];
-
-    // Convert updated saving goals to JSON string
-    const savingGoalsJSON = JSON.stringify(updatedSavingGoals);
-
-    // Save JSON string back to local storage
-    localStorage.setItem("SavedSavingGoals", savingGoalsJSON);
   };
 
   return (
     <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-full" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
-      
-        {/* Open the modal to set the goal for the saving pot */}
-        <button
-          className="btn bg-blue-500 text-white px-2 py-1 rounded-md hover:bg-blue-600 focus:outline-none focus:bg-blue-600 ml-3"
-          onClick={() => document.getElementById(`Pot_${pot.id}`).showModal()}
-        >
-          Set Goal
-        </button>
-
-        <dialog id={`Pot_${pot.id}`} className="modal">
-          <div className="modal-box bg-white rounded-md shadow-md p-6">
-            <h3 className="font-bold text-lg mb-4">Set Pot Goal</h3>
-            <p className="text-gray-700 py-4">Goal goes here</p>
-            <div className="modal-action flex justify-end">
-              <form method="dialog">
-                <button className="btn bg-red-500 hover:bg-red-600 text-white px-4 py-2 rounded-md transition-colors duration-300 ease-in-out focus:outline-none focus:ring-2 focus:ring-red-500 focus:ring-opacity-50">Close</button>
-              </form>
-            </div>
-          </div>
-        </dialog>
-
-
 
         <div className="px-6 py-4">
           <div className="flex items-center justify-center bg-gray-200 rounded-full py-3 px-6 mb-2">         
@@ -96,7 +64,7 @@ function SavingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
                 className="btn bg-green-500 text-white px-2 py-1 rounded-md hover:bg-green-600 focus:outline-none focus:bg-green-600 ml-3"
                 onClick={(e) => handleSubmit(e)}
               >
-                <span className="text-white">✔</span>
+                ✔
               </button>
               <button
                 className="btn bg-red-500 text-white px-2 py-1 rounded-md hover:bg-red-600 focus:outline-none focus:bg-red-600 ml-3"
