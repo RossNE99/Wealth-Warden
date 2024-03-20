@@ -2,8 +2,7 @@
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
 
 ## Description
-Wealth-Warden is a client-side single-page application designed to help track and keep your spending habits in check.
-This application acts as your financial ally, guiding you through the mystical realm of budgeting. It functions by asking for your monthly wages as you start using the app. It categories your spendings by sorting them into self-created 'Pots' which allows you to input every expense. It then shows you how much you've spent and how much you have left. Need to save for something special? You can set savings goals, the app then encourages you to save a portion of your earnings each month. Graph's and Monthly pdf's are also generated to discover patterns and show your spending habits. 
+Wealth-Warden is a client-side single-page application designed to assist users in monitoring and regulating their spending patterns. Serving as a financial companion, it navigates users through the intricate world of budgeting. The application begins by prompting users to input their monthly income upon initiation. It organizes expenditures into user-defined 'Pots,' facilitating the recording of every expense. Additionally, it provides an overview of spent amounts and remaining balances. For those with specific savings objectives, the app enables the setting of savings targets, motivating users to allocate a portion of their income towards savings each month. Moreover, it generates graphs and monthly PDF reports to identify trends and illustrate spending habits.
 
 
 ## Table of Contents
@@ -21,7 +20,6 @@ Git/GitBash, VS Code, React,Vite,Tailwind css and the source code, of course! :h
 
 
 ## Dev Environment Setup
-Please make sure you have NodeJS downloaded
 To get the development environment running:
 1. Clone this repo
 2. Navagate to the repo on your local machine
@@ -30,7 +28,7 @@ To get the development environment running:
 - `index.jsx`: Contains the js code to initialize and run the app
 - `src/`: Contains all source files,pages and components to allow this app to function
 - `assets/images/`: Contains all images used in the project/readme
-- `assets/css/`: Contains all css styles in the project
+- `index.css/App.css`: Contains all css styles used in the project
 
 
 ## How to contribute
@@ -50,21 +48,23 @@ To get the development environment running:
 - **Postcss**
 - **Bootstrap**
 - **Tailwindcss**
+- **Apex charts**
+- **UUID (Universal unique identifier)**
 
 
 ## Webpage Screenshot
 The following image shows the application's functionality:
-![Placeholder](./public/images/Wealth%20Warden.jpg)
+![Placeholder](https://github.com/RossNE99/Wealth-Warden/assets/117757450/db399c2e-b74c-4278-bd0f-3cb7783d859d)
 
 
 ## Credits
-- **Ross,Eitel,Dhvya,Temi,Kelly** - Source Code
+- **Ross,Eitel,Dhivya,Temi,Kelly** - Source Code
 ---
 
 
-## Licence
+## License
 MIT License
-Copyright (c) 2024 Wealth-Warden
+Copyright (c) 2024 Wealth-Warden 💷
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
