@@ -42,7 +42,7 @@ function SavingPotCard({ pot, onRemove }) {
     <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <div className="flex items-center justify-center">
-          <img className="flex w-2/3 justify-center" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
+          <img className="flex w-1/3 justify-center" src="https://icons.veryicon.com/png/o/business/financial-management/20-money-saving-pot.png" alt="Saving pot" />
         </div>
         <div className="px-6 py-4">
           <div className="flex items-center justify-center bg-gray-200 rounded-full py-3 px-6 mb-2">         

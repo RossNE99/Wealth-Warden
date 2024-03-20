@@ -44,7 +44,7 @@ function BudgetSavingPot() {
   };
 
   return (
-    <div className='md:col-span-6 sm:col-span-1 border border-gray-300 shadow-lg rounded-lg mb-auto m-2 mt-auto pb-3 overflow-hidden'>
+    <div className='md:col-span-1 sm:col-span-1 border border-gray-300 shadow-lg rounded-lg mb-auto m-2 mt-4 pb-3 overflow-hidden'>
       <div className="flex justify-between items-center">
         <h2 className='text-2xl font-semibold m-3'>Saving Pots</h2>
         <button
@@ -55,17 +55,22 @@ function BudgetSavingPot() {
         </button>
       </div>
 
-      <div className='overflow-x-auto max-h-full flex flex-wrap justify-evenly md:pb-12'>
-        {savingPots.map(pot => (
-          <SavingPotCard
-            key={pot.id}
-            pot={pot}
-            potName={pot.potName}
-            onRemove={handleRemoveSavingPot}
-            onChangeAmount={handleChangeAmount}
-          />
-        ))}
+
+      <div className="flex items-center justify-center">
+        <div className='overflow-x-auto max-h-full flex flex-col flex-wrap justify-center md:pb-12'>
+          {savingPots.map(pot => (
+            <SavingPotCard
+              key={pot.id}
+              pot={pot}
+              potName={pot.potName}
+              onRemove={handleRemoveSavingPot}
+              onChangeAmount={handleChangeAmount}
+            />
+          ))}
+        </div>
       </div>
+
+
     </div>
   );
 }
