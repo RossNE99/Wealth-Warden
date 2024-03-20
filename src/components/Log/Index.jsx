@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react'
 import { Table } from 'flowbite-react';
-import { useMyContext } from '../../MyContext';
+import { useMyContext } from '../Contexts/MyContext';
 
 function Log({size}) {
   const {logs} = useMyContext();

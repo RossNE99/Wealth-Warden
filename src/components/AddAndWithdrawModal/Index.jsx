@@ -2,7 +2,7 @@ import { Button, Label , Modal, TextInput} from "flowbite-react";
 import { useEffect, useRef, useState } from "react";
 import React from "react";
 import { v4 as uuidv4 } from 'uuid';
-import { useMyContext  } from "../../MyContext";
+import { useMyContext  } from "../Contexts/MyContext";
 
 /* To add or withdraw money from the savings or spending pot*/
 
