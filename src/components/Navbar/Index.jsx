@@ -9,11 +9,13 @@ import { GiHamburgerMenu } from "react-icons/gi";
 import { Button } from 'flowbite-react';
 import Date from '../Date';
 import Logo from '../../assets/Logo.jpg';
+import { useMyContext  } from "../Contexts/MyContext";
 
 
 function Navbar({ children }) {
   const [toggled, setToggled] = useState(false);
   const [broken, setBroken] = useState(window.matchMedia('(max-width: 764px)').matches);
+  const {MonthlyWage}= useMyContext();
 
   const height = !broken ? `100vh` : "auto"
 
@@ -49,6 +51,9 @@ function Navbar({ children }) {
             <MenuItem component={<Link to="/Statement" />} icon={<RiBillFill />}> Statement</MenuItem>
           </Menu>
           <Date />
+          <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
+            Remaining allowance: <strong>£{MonthlyWage}</strong>
+          </h2>
         </Sidebar>
         {children}
       </div>
