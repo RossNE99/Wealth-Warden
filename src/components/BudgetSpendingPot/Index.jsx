@@ -4,7 +4,7 @@ import { v4 as uuidv4 } from 'uuid';
 import { useMyContext } from "../Contexts/MyContext";
 
 function BudgetSpendingPot() {
-  const {SpendingPots} = useMyContext();
+  const { updateSpendingPot, SpendingPots} = useMyContext();
   const [spendingPots, setSpendingPots] = useState([]);
 
   //Load spending pots from local storage on initial render
@@ -26,6 +26,11 @@ function BudgetSpendingPot() {
   const handleRemoveSpendingPot = (id) => {
     const updatedPots = spendingPots.filter(pot => pot.id !== id);
     setSpendingPots(updatedPots);
+    
+    //Remove the pot from local storage if present
+    const updatedSpendingPots = SpendingPots.filter(pot => pot.id !== id);
+    // Update the local storage with the filtered pots
+    updateSpendingPot(updatedSpendingPots);
   };
 
   const handleChangeAmount = (id, amount) => {
