@@ -1,22 +1,30 @@
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { Table } from 'flowbite-react';
-
-const moc = [
-{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
-{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
-{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
-{name:"Test1", type:"Saving", amount:2.21, timeStamp: 123453245}, 
-{name:"Test2", type:"Spending", amount:7.22, timeStamp: 123453245},
-]
+import { useMyContext } from '../../MyContext';
 
 function Log({size}) {
+  const {logs} = useMyContext();
+
+  if (logs.length<1) return (
+    <>
+    <h2 className='text-2xl font-semibold mx-3 mb-3'>Logs</h2>
+    <div className={`overflow-x-auto ${size}`}>
+    <Table>
+      <Table.Head>
+        <Table.HeadCell className='bg-gray-300'>Pot Name</Table.HeadCell>
+      </Table.Head>
+      <Table.Body className="divide-y">
+            <Table.Row className="bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
+            <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
+              There have been No transactions yet
+            </Table.Cell>
+            </Table.Row>
+      </Table.Body>
+    </Table>
+  </div>
+  </>
+  )
+
   return (
     <>
     <h2 className='text-2xl font-semibold mx-3 mb-3'>Logs</h2>
@@ -31,14 +39,14 @@ function Log({size}) {
         </Table.HeadCell> */}
       </Table.Head>
       <Table.Body className="divide-y">
-        {moc.map((transaction) => (
-            <React.Fragment key={transaction.name}>
+        {logs.map((transaction) => (
+            <React.Fragment key={transaction.id}>
             <Table.Row className="bg-gray-100 dark:border-gray-700 dark:bg-gray-800">
             <Table.Cell className="whitespace-nowrap font-medium text-gray-900 dark:text-white">
-            {transaction.name}
+            {transaction.potName}
             </Table.Cell>
             <Table.Cell>{transaction.type}</Table.Cell>
-            <Table.Cell>{transaction.amount}</Table.Cell>
+            <Table.Cell>{transaction.type==="save" ? "+ " : transaction.type==="spend" ? "- " : null}£{transaction.amount}</Table.Cell>
             {/* <Table.Cell>
                 <a href="#" className="font-medium text-cyan-600 hover:underline dark:text-cyan-500">
                 Edit

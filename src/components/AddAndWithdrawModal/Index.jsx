@@ -1,10 +1,14 @@
 import { Button, Label , Modal, TextInput} from "flowbite-react";
-import { useRef, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import React from "react";
+import { v4 as uuidv4 } from 'uuid';
+import { useMyContext  } from "../../MyContext";
 
 /* To add or withdraw money from the savings or spending pot*/
 
-function AddWithdrawModal({name, ammountInInPot, totalAllocated, type, setShowAddWithdrawModal}) {
+function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setShowAddWithdrawModal}) {
+
+  const {logs, updateLogs} = useMyContext()
 
   const [formData, setFormData] = useState({
     amount: '',
@@ -25,6 +29,21 @@ function AddWithdrawModal({name, ammountInInPot, totalAllocated, type, setShowAd
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     console.log(formData.amount)
+
+    // console.log(logs)
+
+    const newEntery = {
+      id: uuidv4(),
+      potName: name,
+      amount: formData.amount,
+      type,
+    }
+
+    const logsWithNewEnery = [newEntery, ...logs]
+    updateLogs(logsWithNewEnery)
+
+    setFormData({amount:''})
+    setShowAddWithdrawModal(false)
 
   };
 
