@@ -10,6 +10,7 @@ import { Button } from 'flowbite-react';
 import Date from '../Date';
 import Logo from '../../assets/Logo.jpg';
 import { useMyContext  } from "../Contexts/MyContext";
+import ResetBtn from '../ResetBtn';
 
 
 function Navbar({ children }) {
@@ -54,6 +55,7 @@ function Navbar({ children }) {
           <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
             Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
           </h2>
+          <ResetBtn />
         </Sidebar>
         {children}
       </div>
