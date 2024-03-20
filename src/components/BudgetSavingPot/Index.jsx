@@ -1,16 +1,24 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import SavingPotCard from "../SavingPotCard";
 import { v4 as uuidv4 } from 'uuid';
 import { useMyContext } from "../Contexts/MyContext";
 
 function BudgetSavingPot() {
-  // const {SavingPots} = useMyContext();
+  const {SavingPots} = useMyContext();
   const [savingPots, setSavingPots] = useState([]);
 
+  //Load saving pots from local storage on initial render
+  useEffect(() => {
+    setSavingPots(SavingPots || []);
+  }, [SavingPots]);
+
   const handleAddSavingPot = () => {
+    // If there are existing pots in the local storage, load them first
+    setSavingPots(SavingPots)
+    //Then create new pots
     const newPot = {
       id: uuidv4(),
-      amount: ''
+      amount: '',
     };
     setSavingPots([...savingPots, newPot]);
   };
@@ -47,6 +55,7 @@ function BudgetSavingPot() {
           <SavingPotCard
             key={pot.id}
             pot={pot}
+            potName={pot.potName}
             onRemove={handleRemoveSavingPot}
             onChangeAmount={handleChangeAmount}
           />
