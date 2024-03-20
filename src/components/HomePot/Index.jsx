@@ -5,7 +5,7 @@ import { FaPlus } from "react-icons/fa";
 import { FaMinus } from "react-icons/fa";
 import AddWithdrawModal from '../AddAndWithdrawModal/Index';
 
-function HomePot({name, ammountInInPot, totalAllocated, type}) {
+function HomePot({id, potName, ammountInInPot, totalAllocated, type}) {
 
     const [showAddWithdrawModal, setShowAddWithdrawModal] = useState(false);
 
@@ -40,16 +40,16 @@ function HomePot({name, ammountInInPot, totalAllocated, type}) {
                         color: chartColor,
                         show: true,
                         offsetY: -50,
-                        formatter: () => name
+                        formatter: () => potName
                       },
                         value: {
                           offsetY: -10,
-                          formatter: () => name
+                          formatter: () => potName
                         },
                         name:{
                         show: true,
                         offsetY: 30,
-                        formatter: () =>`£${ammountInInPot}/${totalAllocated} ${saveOrSpendLable}`
+                        formatter: () =>`£${ammountInInPot}/£${totalAllocated} ${saveOrSpendLable}`
                         //something needs done here to make the "£10/£20 saved" lables look better/smaller on mobile
                         },
                     }
@@ -58,8 +58,8 @@ function HomePot({name, ammountInInPot, totalAllocated, type}) {
               },
               dataLabels: {
                 formatter(val, opts) {
-                  const name = opts.w.globals.labels[opts.seriesIndex]
-                  return [`£${val} ${name}`]
+                  const potName = opts.w.globals.labels[opts.seriesIndex]
+                  return [`%${Math.floor(val)} ${potName}`]
                 }
               },
               legend: {
@@ -71,7 +71,7 @@ function HomePot({name, ammountInInPot, totalAllocated, type}) {
       
     useEffect(() => {
         CreatePotChartData()
-    },[name, ammountInInPot, totalAllocated])
+    },[potName, ammountInInPot, totalAllocated])
   
     return (
     <>
@@ -88,7 +88,7 @@ function HomePot({name, ammountInInPot, totalAllocated, type}) {
     <Modal  show={showAddWithdrawModal} size="md" popup  onClose={() => setShowAddWithdrawModal(false)}>
         <Modal.Header />
         <Modal.Body>
-        <AddWithdrawModal name={name} ammountInInPot={ammountInInPot} totalAllocated={totalAllocated} type={type} setShowAddWithdrawModal={setShowAddWithdrawModal} />
+        <AddWithdrawModal id={id} name={potName} ammountInInPot={ammountInInPot} totalAllocated={totalAllocated} type={type} setShowAddWithdrawModal={setShowAddWithdrawModal} />
         </Modal.Body>
       </Modal>
     </>

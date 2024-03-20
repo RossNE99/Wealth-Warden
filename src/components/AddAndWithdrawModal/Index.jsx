@@ -8,7 +8,7 @@ import { useMyContext  } from "../Contexts/MyContext";
 
 function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setShowAddWithdrawModal}) {
 
-  const {logs, updateLogs} = useMyContext()
+  const {logs, updateLogs, updateSpendingPot, updateSavingPot, SpendingPots, SavingPots} = useMyContext()
 
   const [formData, setFormData] = useState({
     amount: '',
@@ -25,21 +25,55 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
     });
   };
 
+
+  // Function to update an pot by id
+  const updatePotById = (id, pervPots, updatedPot) => {
+
+    console.log(id)
+
+    const updatedPots = pervPots.map(pot => {
+      if (pot.id === id) {
+        // If the current pot's id matches the id we want to update
+        console.log("updates")
+        return { ...pot, ...updatedPot }; // Replace it with the updated pot
+      }
+      return pot; // Otherwise, return the pot unchanged
+    });
+    return(updatedPots); // Update the state with the new array
+  };
+
   const handleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
     console.log(formData.amount)
 
+    const amount = parseInt(formData.amount)
+
     // console.log(logs)
 
-    const newEntery = {
+
+    //update THIS pot
+    if(type==="save") {
+      const newPots = updatePotById(id, SavingPots, {ammountInInPot: ammountInInPot+amount})
+      updateSavingPot(newPots)
+    }
+    
+    else if(type==="spend"){
+      const newPots = updatePotById(id, SpendingPots, {ammountInInPot: ammountInInPot+amount})
+      updateSpendingPot(newPots)
+    }
+    
+
+
+    //log stuff
+    const newLOGEntery = {
       id: uuidv4(),
       potName: name,
-      amount: formData.amount,
+      amount: amount,
       type,
     }
 
-    const logsWithNewEnery = [newEntery, ...logs]
+    const logsWithNewEnery = [newLOGEntery, ...logs]
     updateLogs(logsWithNewEnery)
 
     setFormData({amount:''})
