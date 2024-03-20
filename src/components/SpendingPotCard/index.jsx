@@ -13,7 +13,7 @@ function SpendingPotCard({ pot, onRemove, onChangeAmount, onUpdateName }) {
   };
 
   return (
-    <div className="w-full md:w-1/2 lg:w-1/5 p-4">
+    <div className="w-full p-4">
       <div className="max-w-sm rounded overflow-hidden shadow-lg">
         <img className="w-full" src="https://static.vecteezy.com/system/resources/previews/026/988/239/original/single-continuous-line-drawing-winged-wallet-logo-purse-with-wings-icon-losing-money-spending-pay-wasteful-gone-money-financial-concept-dynamic-one-line-draw-graphic-design-illustration-png.png" alt="Spending wallet with wings" />
         <div className="px-6 py-4">
