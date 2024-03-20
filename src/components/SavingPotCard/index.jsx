@@ -59,7 +59,7 @@ function SavingPotCard({ pot, onRemove }) {
                 name={`savingPot-${pot.id}`}
                 type="number"
                 className="form-input w-full md:w-3/5 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
-                placeholder="Enter amount here £..."
+                placeholder="Enter amount here£..."
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />
@@ -85,22 +85,3 @@ function SavingPotCard({ pot, onRemove }) {
 }
 
 export default SavingPotCard;
-
-
-
-
-
-
-
-
-//Local storage:
-
-
-// SavingPot  ==> {id:"2",name: "test2", ammountInInPot: 0, totalAllocated: 10, type:"save"},  default ammountInInPot to be 0
-// SpendingPot  ==> {id:"13",name: "food", ammountInInPot: 0, totalAllocated: 100, type:"spend"},
-// Log  ==> {},
-
-
-
-
-
