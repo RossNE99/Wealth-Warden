@@ -97,8 +97,8 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
             </div>
             <hr className="h-px my-8 bg-gray-200 border-0"/>
             <div className="mb-2 flex justify-center">
-              <Button gradientDuoTone="purpleToBlue" className="mr-9 mt-2 h-10  px-5" type="submit" onClick={() => setShowAddWithdrawModal(false)}>Close</Button>
               <Button gradientDuoTone="purpleToBlue" className=" mt-2 h-10 px-5" type="submit" onClick={(e) =>handleFormSubmit(e)}>Save</Button>
+              <Button gradientMonochrome="failure" className="ml-9 mt-2 h-10  px-5" type="submit" onClick={() => setShowAddWithdrawModal(false)}>Close</Button>
             </div>
             </form>
           </div>
