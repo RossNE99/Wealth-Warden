@@ -4,7 +4,7 @@ import Budgeting from "./pages/Budgeting";
 import Home from "./pages/Home";
 import Navbar from "./components/Navbar/Index";
 import Statement from "./pages/Statement";
-import { MyProvider } from './MyContext';
+import { MyProvider } from './components/Contexts/MyContext';
 
 function App() {
   return (
