@@ -1,4 +1,4 @@
-import React, { createContext, useState, useContext } from 'react';
+import React, { createContext, useState, useContext, useEffect } from 'react';
 
 const MyContext = createContext();
 
@@ -7,6 +7,7 @@ export const MyProvider = ({ children }) => {
     const [MonthlyWage, setMonthlyWage] = useState(JSON.parse(localStorage.getItem("MonthlyWage")) || []);
     const [SavingPots, setSavingPots] = useState(JSON.parse(localStorage.getItem("SavingPots")) || []);
     const [SpendingPots, setSpendingPots] = useState(JSON.parse(localStorage.getItem("SpendingPots")) || []);
+    const [MonthlyWageRemaining, setMonthlyWageRemaining] = useState()
 
     const updateLogs = (newLogs) => {
         localStorage.setItem("log", JSON.stringify(newLogs));
@@ -32,8 +33,16 @@ export const MyProvider = ({ children }) => {
       setSpendingPots(newSpendingPot);
     };
 
+    useEffect(() => {
+      const allPots = [...SavingPots, ...SpendingPots]
+      console.log(allPots)
+      const totalAmmountInInPots = allPots.reduce((total, pot) => total + pot.ammountInInPot, 0);
+
+      setMonthlyWageRemaining(MonthlyWage - totalAmmountInInPots)
+    },[MonthlyWage, SavingPots, SavingPots])
+
   return (
-    <MyContext.Provider value={{ logs, updateLogs, MonthlyWage, updateMonthlyWage, SavingPots, updateSavingPot, SpendingPots, updateSpendingPot }}>
+    <MyContext.Provider value={{ logs, updateLogs, MonthlyWage, updateMonthlyWage, SavingPots, updateSavingPot, SpendingPots, updateSpendingPot, MonthlyWageRemaining }}>
       {children}
     </MyContext.Provider>
   );
