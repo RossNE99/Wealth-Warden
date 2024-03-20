@@ -75,7 +75,7 @@ function HomePot({id, potName, ammountInInPot, totalAllocated, type}) {
   
     return (
     <>
-    <div  onClick={() => setShowAddWithdrawModal(true)} style={{minWidth:"45%", maxWidth:"100%"}} className="rounded-lg m-1 relative bg-gray-100 shadow">
+    <div  onClick={() => setShowAddWithdrawModal(true)} style={{minWidth:"300px", maxWidth:"46%"}} className="rounded-lg m-1 relative bg-gray-100 shadow">
     <Button gradientDuoTone="purpleToBlue" className='m-3 absolute top-0 right-0 size-6 rounded-lg flex justify-center items-center shadow-lg'>
      {
      type==="save" ? 
