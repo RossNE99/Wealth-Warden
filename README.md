@@ -54,7 +54,7 @@ To get the development environment running:
 
 ## Webpage Screenshot
 The following image shows the application's functionality:
-![Placeholder](https://github.com/RossNE99/Wealth-Warden/assets/117757450/db399c2e-b74c-4278-bd0f-3cb7783d859d)
+![Placeholder](/public/images/Wealth-Warden.png)
 
 
 ## Credits
