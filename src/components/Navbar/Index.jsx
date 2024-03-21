@@ -59,7 +59,7 @@ function Navbar({ children }) {
                   </h2>
                   :
                   <h2 className="w-full text-center md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-                  Please enter your montly wage on the budgeting section
+                  Please enter your monthly wage in the budgeting section
                 </h2>
            }
 
