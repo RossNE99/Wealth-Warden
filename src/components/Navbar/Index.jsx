@@ -69,7 +69,6 @@ function Navbar({ children }) {
           </div>
         </Sidebar>
         {children}
-        <Contact showModal={toggled} setShowModal={setToggled} />
       </div>
     </>
   );
