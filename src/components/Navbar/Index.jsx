@@ -53,9 +53,16 @@ function Navbar({ children }) {
             <MenuItem component={<Link to="/Statement" />} icon={<RiBillFill />}> Statement</MenuItem>
           </Menu>
           {/* <Date /> */}
-          <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-            Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
-          </h2>
+          {MonthlyWage > 0 ?
+                    <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
+                    Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
+                  </h2>
+                  :
+                  <h2 className="w-full text-center md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
+                  Please enter your montly wage on the budgeting section
+                </h2>
+           }
+
           <div className='flex justify-center items-center'>
             <ResetBtn />
           </div>
