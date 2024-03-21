@@ -44,7 +44,7 @@ function Navbar({ children }) {
               },
             }}
           >
-            <h2 className='text-3xl font-bold m-3 mb-5 bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-indigo-500'>Wealth-Warden</h2>
+            <h2 className='text-3xl font-bold m-3 mb-5 bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-600'>Wealth-Warden</h2>
             <div className="navbar-logo">
               <img src={Logo} alt="Logo" style={{ width: '100', height: 'auto' }} />
             </div>
