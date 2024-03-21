@@ -27,9 +27,6 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
   const handleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    console.log(formData.amount)
-
-    // console.log(logs)
 
     const newEntery = {
       id: uuidv4(),
