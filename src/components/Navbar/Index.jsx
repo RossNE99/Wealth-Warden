@@ -63,7 +63,7 @@ function Navbar({ children }) {
           <Contact/>
           {/* <Date /> */}
           {MonthlyWage > 0 ?
-                    <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
+                    <h2 className={`w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500 ${MonthlyWageRemaining<0 && `text-red-600`}`}>
                     Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
                   </h2>
                   :
