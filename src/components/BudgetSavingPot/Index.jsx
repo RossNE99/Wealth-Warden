@@ -56,8 +56,8 @@ function BudgetSavingPot() {
       </div>
 
 
-      <div className="flex items-center justify-center">
-        <div className='overflow-x-auto max-h-full flex flex-col flex-wrap justify-center md:pb-12'>
+      <div className="overflow-x-auto flex items-center justify-center">
+        <div style={{maxHeight: "90vh"}} className='overflow-y-auto flex flex-wrap justify-center md:pb-12'>
           {savingPots.map(pot => (
             <SavingPotCard
               key={pot.id}

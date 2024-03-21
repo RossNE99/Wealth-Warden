@@ -56,7 +56,9 @@ function Navbar({ children }) {
           <h2 className="w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
             Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
           </h2>
-          <ResetBtn />
+          <div className='flex justify-center items-center'>
+            <ResetBtn />
+          </div>
         </Sidebar>
         {children}
       </div>

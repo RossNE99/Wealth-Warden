@@ -2,8 +2,8 @@ import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Budgeting from "./pages/Budgeting";
 import Home from "./pages/Home";
-import Navbar from "./components/Navbar/Index";
 import Statement from "./pages/Statement";
+import Navbar from "./components/Navbar/Index"
 import { MyProvider } from './components/Contexts/MyContext';
 import { Footer } from "./components/Footer/Index";
 
