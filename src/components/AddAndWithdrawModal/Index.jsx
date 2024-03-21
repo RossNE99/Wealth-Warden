@@ -29,12 +29,9 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
   // Function to update an pot by id
   const updatePotById = (id, pervPots, updatedPot) => {
 
-    console.log(id)
-
     const updatedPots = pervPots.map(pot => {
       if (pot.id === id) {
         // If the current pot's id matches the id we want to update
-        console.log("updates")
         return { ...pot, ...updatedPot }; // Replace it with the updated pot
       }
       return pot; // Otherwise, return the pot unchanged
@@ -45,11 +42,8 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
   const handleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
-    console.log(formData.amount)
 
     const amount = parseInt(formData.amount)
-
-    // console.log(logs)
 
 
     //update THIS pot
