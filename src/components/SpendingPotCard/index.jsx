@@ -47,7 +47,7 @@ function SpendingPotCard({ pot, onRemove }) {
               type="text"
               value={name}
               onChange={handleNameChange}
-              placeholder={`Enter spending pot's name`}
+              placeholder={`Enter name`}
               className="form-input w-full text-xl font-bold text-center bg-transparent focus:outline-none"
             />
           </div>
@@ -57,7 +57,7 @@ function SpendingPotCard({ pot, onRemove }) {
                 name={`spendingPot-${pot.id}`}
                 type="number"
                 className="form-input w-full md:w-3/5 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
-                placeholder="Enter amount here £..."
+                placeholder="Enter amount £..."
                 value={amount}
                 onChange={(e) => setAmount(e.target.value)}
               />

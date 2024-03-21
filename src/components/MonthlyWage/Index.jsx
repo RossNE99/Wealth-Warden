@@ -29,7 +29,7 @@ function EnterWage() {
           name="wage"
           type="number"
           className="form-input w-full md:w-1/2 border border-gray-300 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500"
-          placeholder="£..."
+          placeholder="Enter amount £..."
           id="wage"
           value={MonthlyWageInput.amount}
           onChange={(e) => setMonthlyWageInput({ amount: e.target.value })}
@@ -44,7 +44,7 @@ function EnterWage() {
       </div>
       <div className="flex items-center justify-center">
         <div className="flex items-center justify-center w-full md:w-3/5 mt-2 text-2xl text-green-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-          Monthly Wage: <span className="font-bold">£{MonthlyWage}</span>
+          Monthly Wage: <span className="font-bold ml-1"> £{MonthlyWage}</span>
         </div>
       </div>
 
