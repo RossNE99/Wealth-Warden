@@ -51,12 +51,12 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
  
     if(!parseInt(amount)){
       setValError("You must enter a number")
-      setTimeout(() =>{setValError(null)},2000)
+      setTimeout(() =>{setValError(null)},4000)
       return
     }
     if(amount>MonthlyWageRemaining){
       setValError(`You dont have enough money, You only have £${MonthlyWageRemaining} left`)
-      setTimeout(() =>{setValError(null)},2000)
+      setTimeout(() =>{setValError(null)},4000)
       return
     }
 
