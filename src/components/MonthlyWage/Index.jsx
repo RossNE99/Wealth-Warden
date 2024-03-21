@@ -9,7 +9,6 @@ function EnterWage() {
   const handleSubmit = (e) => {
     e.preventDefault();
     const amount = MonthlyWageInput.amount;
-    console.log(`Monthly wage is £${amount}`);
     updateMonthlyWage(amount);
     // Clear the input field after submission
     setMonthlyWageInput({ amount: '' });

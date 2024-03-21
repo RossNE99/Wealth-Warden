@@ -11,34 +11,28 @@ export const MyProvider = ({ children }) => {
 
     const updateLogs = (newLogs) => {
         localStorage.setItem("log", JSON.stringify(newLogs));
-        console.log(newLogs)
         setLogs(newLogs);
     };
 
     const updateMonthlyWage = (newMonthlyWage) => {
       localStorage.setItem("MonthlyWage", JSON.stringify(newMonthlyWage));
-      console.log(newMonthlyWage)
       setMonthlyWage(newMonthlyWage);
     };
 
     const updateSavingPot = (newSavingPot) => {
       localStorage.setItem("SavingPots", JSON.stringify(newSavingPot));
-      console.log(newSavingPot)
       setSavingPots(newSavingPot);
     };
 
     const updateSpendingPot = (newSpendingPot) => {
       localStorage.setItem("SpendingPots", JSON.stringify(newSpendingPot));
-      console.log(newSpendingPot)
       setSpendingPots(newSpendingPot);
     };
 
     useEffect(() => {
-      const allPots = [...SavingPots, ...SpendingPots]
-      console.log(allPots)
-      const totalAmmountInInPots = allPots.reduce((total, pot) => total + pot.ammountInInPot, 0);
+      const totalAmmountInLog = logs.reduce((total, transaction) => total + transaction.amount, 0);
 
-      setMonthlyWageRemaining(MonthlyWage - totalAmmountInInPots)
+      setMonthlyWageRemaining(MonthlyWage - totalAmmountInLog)
     },[MonthlyWage, SavingPots, SpendingPots])
 
   return (

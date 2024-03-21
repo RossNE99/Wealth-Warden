@@ -14,7 +14,7 @@ import Contact from '../Contact';
 function Navbar({ children }) {
   const [toggled, setToggled] = useState(false);
   const [broken, setBroken] = useState(window.matchMedia('(max-width: 764px)').matches);
-  const { MonthlyWageRemaining } = useMyContext();
+  const { MonthlyWageRemaining, MonthlyWage } = useMyContext();
 
   const height = !broken ? '100vh' : 'auto';
 
@@ -45,7 +45,7 @@ function Navbar({ children }) {
               },
             }}
           >
-            <h2 className="text-3xl font-bold m-3 mb-5 bg-clip-text text-transparent bg-gradient-to-r from-blue-500 to-sky-300">Wealth Warden</h2>
+            <h2 className='text-3xl font-bold m-3 mb-5 bg-clip-text text-transparent bg-gradient-to-r from-sky-500 to-blue-600'>Wealth-Warden</h2>
             <div className="navbar-logo">
               <img src={Logo} alt="Logo" style={{ width: '100', height: 'auto' }} />
             </div>
@@ -61,10 +61,18 @@ function Navbar({ children }) {
             {/* Custom button to trigger the contact modal */}
           </Menu>
           <Contact/>
-          <h2 className="w-full md:w-full mt-2 text-black-600 bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
-            Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
-          </h2>
-          <div className="flex justify-center items-center">
+          {/* <Date /> */}
+          {MonthlyWage > 0 ?
+                    <h2 className={`w-full md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500 ${MonthlyWageRemaining<0 && `text-red-600`}`}>
+                    Remaining allowance: <strong>£{MonthlyWageRemaining}</strong>
+                  </h2>
+                  :
+                  <h2 className="w-full text-center md:w-full mt-2 text-black-600  bg-gray-200 rounded-md py-2 px-4 mr-2 focus:outline-none focus:border-blue-500">
+                  Please enter your montly wage on the budgeting section
+                </h2>
+           }
+
+          <div className='flex justify-center items-center'>
             <ResetBtn />
           </div>
         </Sidebar>

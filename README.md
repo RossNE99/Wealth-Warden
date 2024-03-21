@@ -54,6 +54,7 @@ To get the development environment running:
 
 ## Webpage Screenshot
 The following image shows the application's functionality:
+
 * Home Page
 
 ![Home Page](./src/assets/HomePage.png)
