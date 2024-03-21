@@ -30,10 +30,9 @@ export const MyProvider = ({ children }) => {
     };
 
     useEffect(() => {
-      const allPots = [...SavingPots, ...SpendingPots]
-      const totalAmmountInInPots = allPots.reduce((total, pot) => total + pot.ammountInInPot, 0);
+      const totalAmmountInLog = logs.reduce((total, transaction) => total + transaction.amount, 0);
 
-      setMonthlyWageRemaining(MonthlyWage - totalAmmountInInPots)
+      setMonthlyWageRemaining(MonthlyWage - totalAmmountInLog)
     },[MonthlyWage, SavingPots, SpendingPots])
 
   return (
