@@ -8,7 +8,7 @@ import { useMyContext  } from "../Contexts/MyContext";
 
 function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setShowAddWithdrawModal}) {
 
-  const {logs, updateLogs, updateSpendingPot, updateSavingPot, SpendingPots, SavingPots} = useMyContext()
+  const {logs, updateLogs, updateSpendingPot, updateSavingPot, SpendingPots, SavingPots, MonthlyWageRemaining} = useMyContext()
 
   const [formData, setFormData] = useState({
     amount: '',
@@ -39,11 +39,26 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
     return(updatedPots); // Update the state with the new array
   };
 
+  const [valError, setValError] = useState()
   const handleFormSubmit = (event) => {
     // Preventing the default behavior of the form submit (which is to refresh the page)
     event.preventDefault();
 
     const amount = parseInt(formData.amount)
+
+
+    //vallidation
+ 
+    if(!parseInt(amount)){
+      setValError("You must enter a number")
+      setTimeout(() =>{setValError(null)},2000)
+      return
+    }
+    if(amount>MonthlyWageRemaining){
+      setValError(`You dont have enough money, You only have £${MonthlyWageRemaining} left`)
+      setTimeout(() =>{setValError(null)},2000)
+      return
+    }
 
 
     //update THIS pot
@@ -88,6 +103,7 @@ function AddWithdrawModal({id, name, ammountInInPot, totalAllocated, type, setSh
                 <Label htmlFor="amount" value="Enter Amount" />
               </div>
               <TextInput id="amount" type="number" required onChange={(e) => handleInputChange(e)} name="amount"/>
+              {valError && <h2 className="text-lg text-red-600 text-center mt-2">{valError}</h2>}
             </div>
             <hr className="h-px my-8 bg-gray-200 border-0"/>
             <div className="mb-2 flex justify-center">
