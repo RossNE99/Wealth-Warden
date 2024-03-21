@@ -14,7 +14,7 @@ import Contact from '../Contact';
 function Navbar({ children }) {
   const [toggled, setToggled] = useState(false);
   const [broken, setBroken] = useState(window.matchMedia('(max-width: 764px)').matches);
-  const { MonthlyWageRemaining } = useMyContext();
+  const { MonthlyWageRemaining, MonthlyWage } = useMyContext();
 
   const height = !broken ? '100vh' : 'auto';
 
