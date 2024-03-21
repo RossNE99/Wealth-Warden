@@ -49,7 +49,7 @@ function HomePot({id, potName, ammountInInPot, totalAllocated, type}) {
                         name:{
                         show: true,
                         offsetY: 30,
-                        formatter: () =>`£${ammountInInPot}/£${totalAllocated} ${saveOrSpendLable}`
+                        formatter: () => type==="save" ? `Goal £${totalAllocated}` : type==="spend" ? `Budget: £${totalAllocated}` : null
                         //something needs done here to make the "£10/£20 saved" lables look better/smaller on mobile
                         },
                     }
