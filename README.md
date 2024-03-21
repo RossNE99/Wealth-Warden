@@ -54,7 +54,26 @@ To get the development environment running:
 
 ## Webpage Screenshot
 The following image shows the application's functionality:
-![Placeholder](/public/images/Wealth-Warden.png)
+
+* Home Page
+
+![Home Page](./src/assets/HomePage.png)
+
+* Budgeting Page
+
+![Budgeting Page](./src/assets/BudgetingPage.png)
+
+*Statement Page
+
+![Statement Page](./src/assets/StatementPage.png)
+
+* Statement PDF
+
+![Statement PDF](./src/assets/StatementPDF.png)
+
+* Contact Us
+
+![Contact Us](./src/assets/ContactUs.png)
 
 
 ## Credits
