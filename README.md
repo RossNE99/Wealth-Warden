@@ -16,12 +16,13 @@ Wealth-Warden is a client-side single-page application designed to assist users 
 
 
 ## Dev Requirements
-Git/GitBash, VS Code, React,Vite,Tailwind css and the source code, of course! : 
+Git/GitBash, VS Code, NodeJS, React, Vite, Tailwind css and the source code, of course! : 
 ![image](https://github.com/RossNE99/Wealth-Warden/assets/117757450/41db7392-1867-4b67-b2b4-840837567f42)
 
 
 
 ## Dev Environment Setup
+Please make sure you have NodeJS downloaded.
 To get the development environment running:
 1. Clone this repo
 2. Navagate to the repo on your local machine
@@ -46,6 +47,7 @@ To get the development environment running:
 - **React**
 - **React Router**
 - **JavaScript XML**
+- **NodeJS**
 - **Vite**
 - **Postcss**
 - **Bootstrap**
